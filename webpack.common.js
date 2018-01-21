@@ -1,14 +1,10 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
     app: './src/index.js'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Production'
-    })
   ],
   module: {
     rules: [
@@ -21,6 +17,13 @@ module.exports = {
             presets: ["env"]
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
       }
     ]
   },

@@ -4,10 +4,10 @@ import Nav from '../components/Nav'
 
 const Layout = {
   view: vnode  => {
-    return m("main.layout", [
+    console.log(vnode.children)
+    return m("main.sans-serif", [
       m(Nav),
-      m("section", vnode.children),
-      m(Footer)
+      m("section.mv4-ns", vnode.children)
     ])
   }
 }
